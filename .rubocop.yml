@@ -1,0 +1,45 @@
+AllCops:
+  Exclude:
+    - bin/**/*
+    - db/schema.rb
+    - tmp/**/*
+    - Rakefile
+  Include:
+    - '**/*.rake'
+    - Gemfile
+    - config.ru
+  TargetRailsVersion: 5.2.0
+  TargetRubyVersion: 2.5
+
+Documentation:
+  Enabled: false
+
+Metrics/BlockLength:
+  Enabled: false
+
+Metrics/LineLength:
+  Max: 90
+  Exclude:
+    - '**/*.html.erb'
+    - 'db/*'
+    - 'db/migrate/*'
+    - 'config/**/*'
+    - 'spec/**/*'
+
+Metrics/MethodLength:
+  Exclude:
+    - 'db/migrate/*'
+
+Style/DoubleNegation:
+  Exclude:
+    - 'spec/**/*'
+
+Naming/FileName:
+  Exclude:
+    - Brewfile
+
+Style/Lambda:
+  EnforcedStyle: literal
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
