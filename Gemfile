@@ -16,14 +16,29 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 group :test, :development do
-  gem 'database_cleaner'
   gem 'factory_bot_rails'
   gem 'geckodriver-helper'
-  gem 'rspec-rails'
-  gem 'rubocop'
   gem 'ruby_css_lint'
-  gem 'shoulda-matchers'
-  gem 'simplecov'
+
+  # Debugging Gems
+  gem 'binding_of_caller'
+  gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  gem 'pry'
+  gem 'pry-byebug'
+  gem 'pry-remote'
+
+  # Auditing Gems
+  gem 'rubocop'
+
+  # Development Gems
+  gem 'awesome_print'
+  gem 'better_errors'
+  gem 'bullet'
+  gem 'factory_bot_rails'
+  gem 'foreman'
+
+  # Seeds
+  gem 'faker'
 end
 
 group :development do
@@ -37,5 +52,10 @@ group :test do
   gem 'capybara', '>= 2.15', '< 4.0'
   gem 'selenium-webdriver'
   gem 'chromedriver-helper'
+  gem 'database_cleaner'
+  gem 'rspec'
+  gem 'rspec-rails'
+  gem 'shoulda-matchers'
+  gem 'simplecov'
 end
 

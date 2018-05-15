@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 2018_05_15_134320) do
     t.integer "genre"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["artist_id"], name: "index_records_on_artist_id"
   end
 
 end

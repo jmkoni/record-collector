@@ -4,6 +4,7 @@ require 'spec_helper'
 require File.expand_path('../config/environment', __dir__)
 require 'rspec/rails'
 require 'capybara/rails'
+require 'factory_bot'
 require 'shoulda/matchers'
 require 'selenium/webdriver'
 
@@ -35,6 +36,7 @@ end
 
 RSpec.configure do |config|
   # config.include CsvHelper
+  config.include FactoryBot::Syntax::Methods
 
   config.use_transactional_fixtures = true
 

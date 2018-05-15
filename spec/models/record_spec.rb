@@ -13,7 +13,6 @@ describe Record do
       .with([:rock, :pop, :electronic, :folk, :world, :country,
             :jazz, :funk, :soul, :hip_hop, :classical, :latin,
             :reggae, :stage_and_screen, :blues, :non_music, :rap]) }
-    it { should validate_presence_of :artist }
     it { should validate_presence_of :title }
     it { should validate_presence_of :year }
   end
