@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @record.title %>
+</p>
+
+<p>
+  <strong>Artist:</strong>
+  <%= @record.artist_id %>
+</p>
+
+<p>
+  <strong>Year:</strong>
+  <%= @record.year %>
+</p>
+
+<p>
+  <strong>Condition:</strong>
+  <%= @record.condition.titleize %>
+</p>
+
+<p>
+  <strong>Genre:</strong>
+  <%= @record.genre.titleize %>
+</p>
+
+<%= link_to 'Edit', edit_record_path(@record) %> |
+<%= link_to 'Back', records_path %>
