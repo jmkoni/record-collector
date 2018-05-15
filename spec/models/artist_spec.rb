@@ -7,7 +7,7 @@ describe Artist do
 
   context 'validations' do
     it { should define_enum_for(:band_type)
-      .with(:solo, :group) }
+      .with([:solo, :band]) }
     it { should validate_presence_of :name }
   end
 end
