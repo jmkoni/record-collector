@@ -7,6 +7,12 @@ class RecordsController < ApplicationController
     @records = Record.all
   end
 
+  def index_by_artist
+    @artist = Artist.find(params[:id])
+    @records = @artist.records
+    render :index
+  end
+
   # GET /records/1
   # GET /records/1.json
   def show

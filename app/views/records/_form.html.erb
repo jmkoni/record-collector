@@ -18,22 +18,22 @@
 
   <div class="field">
     <%= form.label :artist_id %>
-    <%= form.text_field :artist_id %>
+    <%= form.collection_select :artist_id, Artist.all, :id, :name %>
   </div>
 
   <div class="field">
     <%= form.label :year %>
-    <%= form.text_field :year %>
+    <%= form.select :year, (Time.zone.now.year - 100)..(Time.zone.now.year) %>
   </div>
 
   <div class="field">
     <%= form.label :condition %>
-    <%= form.text_field :condition %>
+    <%= form.select(:viewable, options_for_select(Record.conditions.map { |value| [value[0].titleize, value[0]] })) %>
   </div>
-  
+
   <div class="field">
     <%= form.label :genre %>
-    <%= form.text_field :genre %>
+    <%= form.select(:viewable, options_for_select(Record.genres.map { |value| [value[0].titleize, value[0]] })) %>
   </div>
 
   <div class="actions">

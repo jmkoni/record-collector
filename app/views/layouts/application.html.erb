@@ -1,15 +1,46 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>RecordCollector</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+<head>
+  <title>Record Collector</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <%= csrf_meta_tags %>
+  <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
+  <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+</head>
+<body>
+  <header>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <%= link_to "Record Collector", root_path, class: "navbar-brand" %>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+          <li role="presentation" class=<%= (records_active || "") + " nav-item" %>>
+            <%= link_to 'Records', records_path, class: "nav-link" %>
+          </li>
+          <li role="presentation" class=<%= (artists_active || "") + " nav-item" %>>
+            <%= link_to 'Artists', artists_path, class: "nav-link" %>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
 
-  <body>
+  <!-- Begin page content -->
+  <main role="main" class="container">
+    <%- if flash[:notice] -%>
+      <div class="alert alert-info" role="alert">
+        <%= flash[:notice].html_safe %>
+      </div>
+    <%- end -%>
+    <%- if flash[:alert] -%>
+      <div class="alert alert-danger" role="alert">
+        <%= flash[:alert].html_safe %>
+      </div>
+    <%- end -%>
     <%= yield %>
-  </body>
+  </main>
+</body>
 </html>

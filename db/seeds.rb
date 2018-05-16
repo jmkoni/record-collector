@@ -3,5 +3,15 @@
 #
 # Examples:
 #
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+#   movies = Movie.create([{ name: 'Star Wars' }", " { name: 'Lord of the Rings' }])
+#   Character.create(name: 'Luke'", " movie: movies.first)
+
+artists = ["AC/DC", "Adam and the Ants", "Afrika Bambaataa", "Al Foster", "Alan Parsons", "Alex Chilton", "Amy Winehouse", "Annie Lennox", "Arctic Monkeys", "B.B. King", "Bauhaus", "The Beatles", "Beck", "Billy Idol", "The Birthday Party", "Björk", "Blinker The Star", "Blondie", "Blur", "Bob Dylan", "Bob Marley (and the Wailers)", "Brian Wilson", "Bruce Springsteen", "Buzzcocks", "Captain Beefheart", "Carlos Santana", "Cat Anderson", "Cat Stevens", "Catherine Wheel", "Chic", "Chris Isaak", "Chrissie Hynde", "Chuck Berry", "The Clash", "Cliff Richard (and the Shadows)", "Coldplay", "Cootie Williams", "Cortinas", " The", "The Cramps", "The Cranberries", "Cream", "The Cure", "David Bowie", "David Gilmour", "Deepest Blue", "Devo", "Dizzy Gillespie", "Dr Feelgood", "Duke Ellington", "Ed Sheeran", "Ella Fitzgerald", "Elton John", "Elvis Costello", "Elvis Presley", "Eric Clapton", "The Faces", "Fats Domino", "Flaming Lips", "Florence and the Machine", "Foo Fighters", "Frank Sinatra", "Frank Zappa", "George Michael", "Grace Jones", "Green Day", "Guns N' Roses", "Herbie Hancock", "Horace Silver", "Hugh Masekela", "Ian Dury", "Iggy Pop"]
+artists.each do |artist|
+  Artist.create(name: artist, band_type: Artist.band_types.keys.sample)
+end
+
+albums = ["Thriller", "Back in Black", "The Dark Side of the Moon", "Bat Out of Hell", "The Bodyguard", "Their Greatest Hits (1971–1975)", "Saturday Night Fever", "Rumours", "Grease: The Original Soundtrack from the Motion Picture", "Led Zeppelin IV", "Bad", "Jagged Little Pill", "Come On Over", "Falling into You", "Sgt. Pepper's Lonely Hearts Club Band", "Hotel California", "Dirty Dancing", "21", "Let's Talk About Love", "1", "Gold: Greatest Hits", "Dangerous", "The Immaculate Collection", "Abbey Road", "Born in the U.S.A.", "Brothers in Arms", "Titanic: Music from the Motion Picture", "Metallica", "Nevermind", "The Wall", "Supernatural", "Appetite for Destruction", "Slippery When Wet", "Music Box", "The Eminem Show", "Hybrid Theory", "Come Away with Me", "Unplugged", "True Blue", "Legend: The Best of Bob Marley & The Wailers", "Tapestry", "No Jacket Required", "Greatest Hits", "Bridge over Troubled Water", "The Joshua Tree", "...Baby One More Time", "Backstreet's Back", "Backstreet Boys", "Millennium", "Spice", "Happy Nation", "The Sign", "Whitney Houston", "(What's the Story) Morning Glory?", "The Marshall Mathers LP", "Like a Virgin", "Cross Road", "25", "Boston", "Oops!... I Did It Again", "The Colour of My Love", "Hysteria", "Faith", "Dookie", "Can't Slow Down", "Daydream", "HIStory: Past", " Present and Future", " Book I", "Off the Wall", "The Woman in Me", "Breakfast in America", "Tracy Chapman", "Flashdance: Original Soundtrack from the Motion Picture", "Whitney", "Hybrid Theory", "The Eminem Show", "Come Away with Me", "Confessions", "X&Y", "High School Musical", "High School Musical 2", "Viva la Vida or Death and All His Friends", "I Dreamed a Dream", "Recovery", "21", "Midnight Memories", "Frozen", "25", "Lemonade"]
+albums.each do |album|
+  Record.create(title: album, artist: Artist.all.sample, year: (1955..2018).to_a.sample, condition: Record.conditions.keys.sample, genre: Record.genres.keys.sample)
+end
