@@ -7,6 +7,12 @@ class ArtistsController < ApplicationController
     @artists = Artist.all
   end
 
+  def overview_csv
+    respond_to do |format|
+      format.csv { send_data ArtistsCsvPresenter.to_csv, filename: "artist-overview-#{Date.today}.csv" }
+    end
+  end
+
   # GET /artists/1
   # GET /artists/1.json
   def show
