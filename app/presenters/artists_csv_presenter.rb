@@ -12,8 +12,7 @@ class ArtistsCsvPresenter
     hash.sort_by { |a| a['id'] }
   end
 
-  def self.to_csv
-    records = Artist.all
+  def self.to_csv(records)
     CSV.generate do |csv|
       records = records.to_a
       hash_records = create_artist_hash(records)

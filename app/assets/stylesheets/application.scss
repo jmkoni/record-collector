@@ -1,0 +1,13 @@
+@import "bootstrap";
+/*
+ *= require_tree .
+ *= require_self
+ */
+
+body > .container {
+  padding: 70px 15px 0;
+}
+
+.dataTables_filter, .dataTables_info {
+  padding: 2px 6px;
+}

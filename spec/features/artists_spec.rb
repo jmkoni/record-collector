@@ -17,6 +17,14 @@ describe 'artists pages' do
         expect(page).to have_content("Edit")
       end
     end
+
+    it 'exports csv' do
+      visit '/artists'
+      click_link 'By Name Ascending'
+      header = page.response_headers['Content-Disposition']
+      expect(header).to match /^attachment/
+      expect(header).to match /filename="artist-overview-#{Date.today}.csv"$/
+    end
   end
 
   describe 'artists create', type: :feature do

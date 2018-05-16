@@ -8,8 +8,9 @@ class ArtistsController < ApplicationController
   end
 
   def overview_csv
+    @artists = Artist.order(name: params[:order])
     respond_to do |format|
-      format.csv { send_data ArtistsCsvPresenter.to_csv, filename: "artist-overview-#{Date.today}.csv" }
+      format.csv { send_data ArtistsCsvPresenter.to_csv(@artists), filename: "artist-overview-#{Date.today}.csv" }
     end
   end
 

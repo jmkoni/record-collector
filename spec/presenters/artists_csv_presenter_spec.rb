@@ -12,7 +12,7 @@ describe ArtistsCsvPresenter do
       end
     end
     it 'renders a csv' do
-      csv = ArtistsCsvPresenter.to_csv
+      csv = ArtistsCsvPresenter.to_csv(Artist.all)
       aggregate_failures 'csv contents' do
         expect(csv).to include 'name,num_records,year_range,common_word'
         artists.each do |artist|
